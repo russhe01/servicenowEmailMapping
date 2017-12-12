@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Field Mapping" max_length="40" name="x_17179_inbound_em_email_mapping" type="collection">
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Email attribute" max_length="40" name="email_attribute" type="string">
+            <choice>
+                <element label="Subject" sequence="0" value="Subject"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Email field" max_length="40" name="email_field" type="string"/>
+        <element label="Item" mandatory="true" max_length="32" name="item" reference="sc_cat_item" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Map to" max_length="40" name="map_to" type="string">
+            <choice>
+                <element label="Email body" sequence="0" value="Email body"/>
+                <element label="Email attribute" sequence="1" value="Email attribute"/>
+            </choice>
+        </element>
+        <element choice="1" label="Variable" max_length="32" name="variable" reference="item_option_new" reference_qual="javascript: new x_17179_inbound_em.EmailMappingUtils().getFormVariables(current.item);" type="reference" use_reference_qualifier="advanced">
+            <choice/>
+        </element>
+        <index name="index">
+            <element name="item"/>
+        </index>
+        <index name="index2">
+            <element name="variable"/>
+        </index>
+    </element>
+</database>

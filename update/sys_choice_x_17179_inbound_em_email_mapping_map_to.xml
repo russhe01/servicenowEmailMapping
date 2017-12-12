@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="map_to" table="x_17179_inbound_em_email_mapping" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>map_to</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Email body</label>
+            <language>en</language>
+            <name>x_17179_inbound_em_email_mapping</name>
+            <sequence>0</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-12-11 13:00:37</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>fc823ad40f030300c0c588cce1050e89</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-12-11 13:00:37</sys_updated_on>
+            <value>Email body</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>map_to</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Email attribute</label>
+            <language>en</language>
+            <name>x_17179_inbound_em_email_mapping</name>
+            <sequence>1</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-12-11 13:00:37</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>b0823ad40f030300c0c588cce1050e8b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-12-11 13:00:37</sys_updated_on>
+            <value>Email attribute</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>map_to</element>
+            <name>x_17179_inbound_em_email_mapping</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-12-11 13:00:37</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>7c823ad40f030300c0c588cce1050e8a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>map_to</sys_name>
+            <sys_package display_value="Inbound Email Mapping" source="x_17179_inbound_em">ae7f26140f030300c0c588cce1050e13</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Inbound Email Mapping">ae7f26140f030300c0c588cce1050e13</sys_scope>
+            <sys_update_name>sys_choice_x_17179_inbound_em_email_mapping_map_to</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-12-11 13:00:37</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>
