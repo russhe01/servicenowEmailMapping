@@ -40,7 +40,7 @@ EmailMapping.prototype = {
 			this.item = item;
 			this.createRITM(item);
 		}
-		catch(err){gs.log("Error detected in SI: EmailMapping, function: mapEmail " +err.message);}
+		catch(err){gs.error("Error detected in SI: EmailMapping, function: mapEmail " +err.message);}
 	},
 	
 	createRITM: function(item) {
@@ -86,7 +86,7 @@ EmailMapping.prototype = {
 			var rc = cart.placeOrder();
 			this.updateRITM(rc.sys_id);
 		}
-		catch(err){gs.log("Error detected in SI: EmailMapping, function: createRITM " +err.message);}
+		catch(err){gs.error("Error detected in SI: EmailMapping, function: createRITM " +err.message);}
 	},
 	
 	updateRITM: function(req){
@@ -102,7 +102,7 @@ EmailMapping.prototype = {
 				ritm.update();
 			}
 		}
-		catch(err){gs.log("Error detected in SI: EmailMapping, function: updateRITM " +err.message);}
+		catch(err){gs.error("Error detected in SI: EmailMapping, function: updateRITM " +err.message);}
 	},
 	
 	getVariables : function(itemSysID){
@@ -138,7 +138,7 @@ EmailMapping.prototype = {
 				this.createEmailVars();
 			}
 		}
-		catch(err){gs.log("Error detected in SI: EmailMapping, function: getVariables " +err.message);}
+		catch(err){gs.error("Error detected in SI: EmailMapping, function: getVariables " +err.message);}
 	},
 	
 	getUserRec: function(emailVariable){
@@ -154,7 +154,7 @@ EmailMapping.prototype = {
 				return;
 			}
 		}
-		catch(err){gs.log("Error detected in SI: EmailMapping, function: getUserRec " +err.message);}
+		catch(err){gs.error("Error detected in SI: EmailMapping, function: getUserRec " +err.message);}
 	},
 
 	getTable: function() {
@@ -164,7 +164,7 @@ EmailMapping.prototype = {
 		emailRef.body = emailRef.body.replace(/:/g, "");
 		return emailRef.body;
 	}
-	catch(err){gs.log("Error detected in SI: EmailMapping, function: getTable " +err.message);}
+	catch(err){gs.error("Error detected in SI: EmailMapping, function: getTable " +err.message);}
 },
 	
 	createEmailVars: function(){
@@ -178,7 +178,7 @@ EmailMapping.prototype = {
 				gr.insert();
 			}
 		}
-		catch(err){gs.log("Error detected in SI: EmailMapping, function: getTable " +err.message);}
+		catch(err){gs.error("Error detected in SI: EmailMapping, function: getTable " +err.message);}
 	},
 	
 	type: 'EmailMapping'
@@ -188,7 +188,7 @@ EmailMapping.prototype = {
         <sys_created_on>2017-12-11 12:57:50</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>92c172d40f030300c0c588cce1050e9a</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>EmailMapping</sys_name>
         <sys_package display_value="Inbound Email Mapping" source="x_17179_inbound_em">ae7f26140f030300c0c588cce1050e13</sys_package>
         <sys_policy>protected</sys_policy>
@@ -196,6 +196,6 @@ EmailMapping.prototype = {
         <sys_scope display_value="Inbound Email Mapping">ae7f26140f030300c0c588cce1050e13</sys_scope>
         <sys_update_name>sys_script_include_92c172d40f030300c0c588cce1050e9a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-12-12 10:46:24</sys_updated_on>
+        <sys_updated_on>2017-12-18 10:00:22</sys_updated_on>
     </sys_script_include>
 </record_update>

@@ -15,7 +15,6 @@ EmailMappingUtils.prototype = {
 
 	getFormVariables: function(item){
 		try{
-			gs.info("russ ");
 			var list = [];
 			//gets variables directly assocaited to the cat_item
 			var vr = new GlideRecord('item_option_new');
@@ -44,7 +43,7 @@ EmailMappingUtils.prototype = {
 			
 			return 'sys_idIN' + list.toString();
 		}
-		catch(err){gs.log("Error detected in SI: EmailMappingUtils, function: getFormVariables " +err.message);}
+		catch(err){gs.error("Error detected in SI: EmailMappingUtils, function: getFormVariables " +err.message);}
 	},
     type: 'EmailMappingUtils'
 };]]></script>
@@ -53,7 +52,7 @@ EmailMappingUtils.prototype = {
         <sys_created_on>2017-12-11 14:03:18</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>88a0479c0f030300c0c588cce1050ef9</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name>EmailMappingUtils</sys_name>
         <sys_package display_value="Inbound Email Mapping" source="x_17179_inbound_em">ae7f26140f030300c0c588cce1050e13</sys_package>
         <sys_policy>protected</sys_policy>
@@ -61,6 +60,6 @@ EmailMappingUtils.prototype = {
         <sys_scope display_value="Inbound Email Mapping">ae7f26140f030300c0c588cce1050e13</sys_scope>
         <sys_update_name>sys_script_include_88a0479c0f030300c0c588cce1050ef9</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-12-11 14:31:11</sys_updated_on>
+        <sys_updated_on>2017-12-18 10:00:41</sys_updated_on>
     </sys_script_include>
 </record_update>
