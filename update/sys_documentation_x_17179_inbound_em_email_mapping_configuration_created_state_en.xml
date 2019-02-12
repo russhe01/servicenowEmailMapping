@@ -1,28 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update>
-    <sys_documentation element="created_state" label="Created state" language="en" table="x_17179_inbound_em_email_mapping_configuration">
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="created_state" label="Default ticket state" language="en" table="x_17179_inbound_em_email_mapping_configuration">
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>created_state</element>
             <help/>
             <hint>Enter the value of the state for the ticket to be logged in</hint>
-            <label>Created state</label>
+            <label>Default ticket state</label>
             <language>en</language>
             <name>x_17179_inbound_em_email_mapping_configuration</name>
-            <plural>Created states</plural>
+            <plural>Default ticket states</plural>
             <sys_class_name>sys_documentation</sys_class_name>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2017-12-12 10:40:36</sys_created_on>
-            <sys_customer_update>false</sys_customer_update>
-            <sys_id>2b0c9b6c0f4b0300c0c588cce1050ec0</sys_id>
-            <sys_mod_count>1</sys_mod_count>
-            <sys_name>Created state</sys_name>
+            <sys_id>6f9116794f23230033322b8ca310c77b</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_name>Default ticket state</sys_name>
             <sys_package display_value="Inbound Email Mapping" source="x_17179_inbound_em">ae7f26140f030300c0c588cce1050e13</sys_package>
             <sys_policy/>
-            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
             <sys_scope display_value="Inbound Email Mapping">ae7f26140f030300c0c588cce1050e13</sys_scope>
             <sys_update_name>sys_documentation_x_17179_inbound_em_email_mapping_configuration_created_state_en</sys_update_name>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2017-12-12 10:42:46</sys_updated_on>
+            <sys_updated_on>2019-02-12 12:48:28</sys_updated_on>
             <url/>
             <url_target/>
         </sys_documentation>

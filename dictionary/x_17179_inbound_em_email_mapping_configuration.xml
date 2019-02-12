@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<database>
+<?xml version="1.0" encoding="UTF-8"?><database>
     <element label="Email Mapping Configuration" max_length="40" name="x_17179_inbound_em_email_mapping_configuration" type="collection">
         <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
-        <element attributes="edge_encryption_enabled=true" hint="Enter the value of the state for the ticket to be logged in" label="Created state" max_length="40" name="created_state" type="string"/>
+        <element attributes="edge_encryption_enabled=true" hint="Enter the value of the state for the ticket to be logged in" label="Default ticket state" max_length="40" name="created_state" type="string"/>
         <element label="From" max_length="120" name="from" type="string"/>
         <element label="Item" max_length="32" name="item" reference="sc_cat_item" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" display="true" label="Name" max_length="40" name="name" type="string"/>
         <element label="Subject" max_length="120" name="subject" type="string"/>
         <index name="index">
             <element name="item"/>

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sys_script_include">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
     <sys_script_include action="INSERT_OR_UPDATE">
         <access>public</access>
         <active>true</active>
@@ -16,29 +15,21 @@ EmailMapping.prototype = {
 		this.from_sys_id = email.from_sys_id;
 		this.body = email.body;
 		this.body_text = email.body_text;
-		this.error = '';
-		this.item = '';
 		this.state = '';
 	},
 	
 	
 	mapEmail: function(){
 		try{
-			var item = '';
 		var configRec = new GlideRecord('x_17179_inbound_em_email_mapping_configuration');
-			configRec.addQuery('active', true);
 			configRec.addQuery('subject', this.subject);
+			configRec.addActiveQuery();
 			configRec.query();
 			
-			if(configRec.next()){
-				item = configRec.item;
-			}
-			else{
-				return "false";
-			}
-			this.state = configRec.created_state;
-			this.item = item;
-			this.createRITM(item);
+			var result = (configRec.next()) ? this.item = configRec.item : false;
+	
+			this.state = configRec.created_state; //Default state of ticket
+			this.createRITM(this.item);
 		}
 		catch(err){gs.error("Error detected in SI: EmailMapping, function: mapEmail " +err.message);}
 	},
@@ -47,114 +38,111 @@ EmailMapping.prototype = {
 		try{
 			var cart = new Cart();
 			var cartItem = cart.addItem(item);
+			var	objectARR = new JSON().decode(this.getVariables(item));
 			
-			var object = '';
-			object = new JSON().decode(this.getVariables(item));
+			for(var i = 0; objectARR.length > i; i++){
 			
-			for(var i = 0; object.length > i; i++){
-			
-				
-				if(object[i].type == 3) //If type is Multiple Choice
+				if(objectARR[i].type == 3) //If type is Multiple Choice
 					{
 					var gr = new GlideRecord('question_choice');
-					gr.addQuery('question', object[i].sys_id);
-					gr.addQuery('text', this.body[object[i].email]);
+					gr.addQuery('question', objectARR[i].sys_id);
+					gr.addQuery('text', this.body[objectARR[i].email]);
 					gr.query();
 					
 					if (gr.next()){
-						cart.setVariable(cartItem, object[i].sn, gr.value);
+						cart.setVariable(cartItem, objectARR[i].sn, gr.value);
 					}
 				}
 			
-				else if(object[i].emailAtt !== null){
-					if(object[i].emailAtt == "Subject"){
-					cart.setVariable(cartItem, object[i].sn, this.subject);
+				else if(objectARR[i].emailAtt !== null){
+					if(objectARR[i].emailAtt == "Subject"){
+					cart.setVariable(cartItem, objectARR[i].sn, this.subject);
 					}
 				}
 				
-				else if(object[i].email == 'arm_manager'){
-					cart.setVariable(cartItem, object[i].sn, this.getUserRec(this.body[object[i].email]).sys_id);
+				else if(objectARR[i].email == 'arm_manager'){
+					cart.setVariable(cartItem, objectARR[i].sn, this._getUserRec(this.body[objectARR[i].email]).sys_id);
 				}
-				else if(object[i].email == 'requested_by'){
-					cart.setVariable(cartItem, object[i].sn, this.getUserRec(this.from_sys_id).sys_id);
-					cart.setVariable(cartItem,'requestors_department', this.getUserRec(this.from_sys_id).department);
+				else if(objectARR[i].email == 'requested_by'){
+					cart.setVariable(cartItem, objectARR[i].sn, this._getUserRec(this.from_sys_id).sys_id);
+					cart.setVariable(cartItem,'requestors_department', this._getUserRec(this.from_sys_id).department);
 				}
 				else{
-					cart.setVariable(cartItem, object[i].sn, this.body[object[i].email]);
+					cart.setVariable(cartItem, objectARR[i].sn, this.body[objectARR[i].email]);
 				}
 			}
 			var rc = cart.placeOrder();
-			this.updateRITM(rc.sys_id);
+			this._updateRITM(rc.sys_id);
 		}
 		catch(err){gs.error("Error detected in SI: EmailMapping, function: createRITM " +err.message);}
 	},
 	
-	updateRITM: function(req){
+	_updateRITM: function(req){
 		try{
 			var ritm = new GlideRecord('sc_req_item');
-			ritm.addQuery('request', req);
-			ritm.query();
-			while (ritm.next()){
-				ritm.state = this.state;
-				ritm.work_notes = this.body_text;
-				ritm.contact_type = "email";
-				ritm.short_description = this.subject;
-				ritm.update();
+				ritm.addQuery('request', req);
+				ritm.query();
+			
+			if(ritm.hasNext()){
+				while (ritm.next()){
+						ritm.state = this.state;
+						ritm.work_notes = this.body_text;
+						ritm.contact_type = "email";
+						ritm.short_description = this.subject;
+						ritm.update();
+			}
 			}
 		}
-		catch(err){gs.error("Error detected in SI: EmailMapping, function: updateRITM " +err.message);}
+		catch(err){gs.error("Error detected in SI: EmailMapping, function: _updateRITM " +err.message);}
 	},
 	
 	getVariables : function(itemSysID){
 		try{
 			//checks the mapping table for mapped values and returns to the create function in JSON object
 			var array = [];
-			var variables = new GlideRecord('x_17179_inbound_em_email_mapping');
-			variables.addQuery('item', itemSysID);
-			variables.query();
+			var mapping = new GlideRecord('x_17179_inbound_em_email_mapping');
+				mapping.addQuery('item', itemSysID);
+				mapping.query();
 			
-			if(variables.hasNext()){
-				while(variables.next()){
-				var email = variables.getDisplayValue('email_field');
-				var variable =  variables.variable.getRefRecord();
-				var sn = variable.getValue('name');
-				var type = variable.getValue('type');
-				var sys_id = variable.getUniqueValue();
-				var emailAtt = variables.getValue('email_attribute');
+			//If mapping records have been defined then get them and return
+			if(mapping.hasNext()){
+				while(mapping.next()){
 				
+				//Get the variable record
+				var variable =  mapping.variable.getRefRecord();
+			
+				//create object and push to array to return
 				var obj = {};
-				obj.email = email;
-				obj.sn = sn;
-				obj.type = type;
-				obj.sys_id = sys_id;
-				obj.emailAtt = emailAtt;
+					obj.email = mapping.getDisplayValue('email_field');
+					obj.emailAtt = mapping.getValue('email_attribute');
+					obj.sn = variable.getValue('name');
+					obj.type = variable.getValue('type');
+					obj.sys_id = variable.getUniqueValue();
 					
 				array.push(obj);
 			}
-			var json = JSON.stringify(array);
-			return json;
+			return JSON.stringify(array);
 		}
+		//If no mapping records have been defined then create them automatically
 			else{
-				this.createEmailVars();
+				this._createEmailVars();
 			}
 		}
 		catch(err){gs.error("Error detected in SI: EmailMapping, function: getVariables " +err.message);}
 	},
 	
-	getUserRec: function(emailVariable){
+	_getUserRec: function(emailVariable){
 		try{
 			
 			var user = new GlideRecord('sys_user');
 			user.addQuery('name', emailVariable).addOrCondition('sys_id', emailVariable);
 			user.query();
-			if(user.next()){
-				return user;
-			}
-			else{
-				return;
-			}
+			
+			var result = (user.next()) ? user : '';
+			
+			return result;
 		}
-		catch(err){gs.error("Error detected in SI: EmailMapping, function: getUserRec " +err.message);}
+		catch(err){gs.error("Error detected in SI: EmailMapping, function: _getUserRec " +err.message);}
 	},
 
 	getTable: function() {
@@ -167,18 +155,18 @@ EmailMapping.prototype = {
 	catch(err){gs.error("Error detected in SI: EmailMapping, function: getTable " +err.message);}
 },
 	
-	createEmailVars: function(){
+	_createEmailVars: function(){
 		try{
 			for (var x in this.body){
 				var gr = new GlideRecord('x_17179_inbound_em_email_mapping');
-				gr.initialize();
-				gr.email_field = x;
-				gr.item = this.item;
-				gr.map_to = "Email body";
-				gr.insert();
+					gr.initialize();
+					gr.email_field = x;
+					gr.item = this.item;
+					gr.map_to = "Email body";
+					gr.insert();
 			}
 		}
-		catch(err){gs.error("Error detected in SI: EmailMapping, function: getTable " +err.message);}
+		catch(err){gs.error("Error detected in SI: EmailMapping, function: _createEmailVars " +err.message);}
 	},
 	
 	type: 'EmailMapping'
@@ -186,16 +174,14 @@ EmailMapping.prototype = {
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-12-11 12:57:50</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
         <sys_id>92c172d40f030300c0c588cce1050e9a</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name>EmailMapping</sys_name>
         <sys_package display_value="Inbound Email Mapping" source="x_17179_inbound_em">ae7f26140f030300c0c588cce1050e13</sys_package>
         <sys_policy>protected</sys_policy>
-        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Inbound Email Mapping">ae7f26140f030300c0c588cce1050e13</sys_scope>
         <sys_update_name>sys_script_include_92c172d40f030300c0c588cce1050e9a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-12-18 10:00:22</sys_updated_on>
+        <sys_updated_on>2019-02-12 12:54:17</sys_updated_on>
     </sys_script_include>
 </record_update>
