@@ -3,6 +3,7 @@
         <access>public</access>
         <active>true</active>
         <api_name>x_17179_inbound_em.EmailMapping</api_name>
+        <caller_access/>
         <client_callable>false</client_callable>
         <description/>
         <name>EmailMapping</name>
@@ -26,8 +27,13 @@ EmailMapping.prototype = {
 			configRec.addActiveQuery();
 			configRec.query();
 			
-			var result = (configRec.next()) ? this.item = configRec.item : false;
-	
+			if(configRec.next()){
+				this.item = configRec.item;
+			}
+			else{
+				return;
+			}
+			this.map_config = configRec;
 			this.state = configRec.created_state; //Default state of ticket
 			this.createRITM(this.item);
 		}
@@ -36,9 +42,9 @@ EmailMapping.prototype = {
 	
 	createRITM: function(item) {
 		try{
-			var cart = new Cart();
+			var cart = new global.Cart();
 			var cartItem = cart.addItem(item);
-			var	objectARR = new JSON().decode(this.getVariables(item));
+			var	objectARR = new global.JSON().decode(this.getVariables(item));
 			
 			for(var i = 0; objectARR.length > i; i++){
 			
@@ -121,6 +127,7 @@ EmailMapping.prototype = {
 					
 				array.push(obj);
 			}
+
 			return JSON.stringify(array);
 		}
 		//If no mapping records have been defined then create them automatically
@@ -157,12 +164,15 @@ EmailMapping.prototype = {
 	
 	_createEmailVars: function(){
 		try{
+	//gs.info("russ email body " + this.body);
 			for (var x in this.body){
+	
 				var gr = new GlideRecord('x_17179_inbound_em_email_mapping');
 					gr.initialize();
 					gr.email_field = x;
 					gr.item = this.item;
 					gr.map_to = "Email body";
+					gr.configuration = this.map_config.sys_id;
 					gr.insert();
 			}
 		}
@@ -174,14 +184,16 @@ EmailMapping.prototype = {
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-12-11 12:57:50</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>92c172d40f030300c0c588cce1050e9a</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>30</sys_mod_count>
         <sys_name>EmailMapping</sys_name>
         <sys_package display_value="Inbound Email Mapping" source="x_17179_inbound_em">ae7f26140f030300c0c588cce1050e13</sys_package>
         <sys_policy>protected</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Inbound Email Mapping">ae7f26140f030300c0c588cce1050e13</sys_scope>
         <sys_update_name>sys_script_include_92c172d40f030300c0c588cce1050e9a</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-02-12 12:54:17</sys_updated_on>
+        <sys_updated_by>russell.shear@arm.com</sys_updated_by>
+        <sys_updated_on>2019-02-12 15:27:38</sys_updated_on>
     </sys_script_include>
 </record_update>

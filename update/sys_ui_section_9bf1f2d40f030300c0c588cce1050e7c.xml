@@ -3,154 +3,140 @@
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>item</element>
             <position>0</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-02-12 12:38:07</sys_created_on>
-            <sys_id>14d5ba4a4f23230033322b8ca310c779</sys_id>
+            <sys_created_by>russell.shear@arm.com</sys_created_by>
+            <sys_created_on>2019-02-12 13:48:01</sys_created_on>
+            <sys_id>80d58bc21baf6b4061dea9fe6e4bcbbb</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_17179_inbound_em_email_mapping" sys_domain="global" view="Default view">9bf1f2d40f030300c0c588cce1050e7c</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-02-12 12:38:07</sys_updated_on>
+            <sys_updated_by>russell.shear@arm.com</sys_updated_by>
+            <sys_updated_on>2019-02-12 13:48:01</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.begin_split</element>
             <position>1</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-02-12 12:38:07</sys_created_on>
-            <sys_id>d8d5ba4a4f23230033322b8ca310c779</sys_id>
+            <sys_created_by>russell.shear@arm.com</sys_created_by>
+            <sys_created_on>2019-02-12 13:48:01</sys_created_on>
+            <sys_id>48d58bc21baf6b4061dea9fe6e4bcbbb</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_17179_inbound_em_email_mapping" sys_domain="global" view="Default view">9bf1f2d40f030300c0c588cce1050e7c</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-02-12 12:38:07</sys_updated_on>
+            <sys_updated_by>russell.shear@arm.com</sys_updated_by>
+            <sys_updated_on>2019-02-12 13:48:01</sys_updated_on>
             <sys_user/>
             <type>.begin_split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.end_split</element>
             <position>2</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-02-12 12:38:07</sys_created_on>
-            <sys_id>5cd5ba4a4f23230033322b8ca310c779</sys_id>
+            <sys_created_by>russell.shear@arm.com</sys_created_by>
+            <sys_created_on>2019-02-12 13:48:01</sys_created_on>
+            <sys_id>c8d58bc21baf6b4061dea9fe6e4bcbbb</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_17179_inbound_em_email_mapping" sys_domain="global" view="Default view">9bf1f2d40f030300c0c588cce1050e7c</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-02-12 12:38:07</sys_updated_on>
+            <sys_updated_by>russell.shear@arm.com</sys_updated_by>
+            <sys_updated_on>2019-02-12 13:48:01</sys_updated_on>
             <sys_user/>
             <type>.end_split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>map_to</element>
             <position>3</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-02-12 12:38:07</sys_created_on>
-            <sys_id>dcd5ba4a4f23230033322b8ca310c779</sys_id>
+            <sys_created_by>russell.shear@arm.com</sys_created_by>
+            <sys_created_on>2019-02-12 13:48:01</sys_created_on>
+            <sys_id>4cd58bc21baf6b4061dea9fe6e4bcbbb</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_17179_inbound_em_email_mapping" sys_domain="global" view="Default view">9bf1f2d40f030300c0c588cce1050e7c</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-02-12 12:38:07</sys_updated_on>
+            <sys_updated_by>russell.shear@arm.com</sys_updated_by>
+            <sys_updated_on>2019-02-12 13:48:01</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.split</element>
             <position>4</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-02-12 12:38:07</sys_created_on>
-            <sys_id>50d5ba4a4f23230033322b8ca310c77a</sys_id>
+            <sys_created_by>russell.shear@arm.com</sys_created_by>
+            <sys_created_on>2019-02-12 13:48:01</sys_created_on>
+            <sys_id>ccd58bc21baf6b4061dea9fe6e4bcbbb</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_17179_inbound_em_email_mapping" sys_domain="global" view="Default view">9bf1f2d40f030300c0c588cce1050e7c</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-02-12 12:38:07</sys_updated_on>
+            <sys_updated_by>russell.shear@arm.com</sys_updated_by>
+            <sys_updated_on>2019-02-12 13:48:01</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>email_attribute</element>
             <position>5</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-02-12 12:38:07</sys_created_on>
-            <sys_id>d0d5ba4a4f23230033322b8ca310c77a</sys_id>
+            <sys_created_by>russell.shear@arm.com</sys_created_by>
+            <sys_created_on>2019-02-12 13:48:01</sys_created_on>
+            <sys_id>40d58bc21baf6b4061dea9fe6e4bcbbc</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_17179_inbound_em_email_mapping" sys_domain="global" view="Default view">9bf1f2d40f030300c0c588cce1050e7c</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-02-12 12:38:07</sys_updated_on>
+            <sys_updated_by>russell.shear@arm.com</sys_updated_by>
+            <sys_updated_on>2019-02-12 13:48:01</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.end_split</element>
             <position>6</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-02-12 12:38:07</sys_created_on>
-            <sys_id>54d5ba4a4f23230033322b8ca310c77a</sys_id>
+            <sys_created_by>russell.shear@arm.com</sys_created_by>
+            <sys_created_on>2019-02-12 13:48:01</sys_created_on>
+            <sys_id>c0d58bc21baf6b4061dea9fe6e4bcbbc</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_17179_inbound_em_email_mapping" sys_domain="global" view="Default view">9bf1f2d40f030300c0c588cce1050e7c</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-02-12 12:38:07</sys_updated_on>
+            <sys_updated_by>russell.shear@arm.com</sys_updated_by>
+            <sys_updated_on>2019-02-12 13:48:01</sys_updated_on>
             <sys_user/>
             <type>.end_split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>email_field</element>
             <position>7</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-02-12 12:38:07</sys_created_on>
-            <sys_id>d4d5ba4a4f23230033322b8ca310c77a</sys_id>
+            <sys_created_by>russell.shear@arm.com</sys_created_by>
+            <sys_created_on>2019-02-12 13:48:01</sys_created_on>
+            <sys_id>44d58bc21baf6b4061dea9fe6e4bcbbc</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_17179_inbound_em_email_mapping" sys_domain="global" view="Default view">9bf1f2d40f030300c0c588cce1050e7c</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-02-12 12:38:07</sys_updated_on>
+            <sys_updated_by>russell.shear@arm.com</sys_updated_by>
+            <sys_updated_on>2019-02-12 13:48:01</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.split</element>
             <position>8</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-02-12 12:38:07</sys_created_on>
-            <sys_id>58d5ba4a4f23230033322b8ca310c77a</sys_id>
+            <sys_created_by>russell.shear@arm.com</sys_created_by>
+            <sys_created_on>2019-02-12 13:48:01</sys_created_on>
+            <sys_id>c4d58bc21baf6b4061dea9fe6e4bcbbc</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_17179_inbound_em_email_mapping" sys_domain="global" view="Default view">9bf1f2d40f030300c0c588cce1050e7c</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-02-12 12:38:07</sys_updated_on>
+            <sys_updated_by>russell.shear@arm.com</sys_updated_by>
+            <sys_updated_on>2019-02-12 13:48:01</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>variable</element>
             <position>9</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-02-12 12:38:07</sys_created_on>
-            <sys_id>d8d5ba4a4f23230033322b8ca310c77a</sys_id>
+            <sys_created_by>russell.shear@arm.com</sys_created_by>
+            <sys_created_on>2019-02-12 13:48:01</sys_created_on>
+            <sys_id>48d58bc21baf6b4061dea9fe6e4bcbbc</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_17179_inbound_em_email_mapping" sys_domain="global" view="Default view">9bf1f2d40f030300c0c588cce1050e7c</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-02-12 12:38:07</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>configuration</element>
-            <position>10</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-02-12 12:38:07</sys_created_on>
-            <sys_id>5cd5ba4a4f23230033322b8ca310c77a</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_17179_inbound_em_email_mapping" sys_domain="global" view="Default view">9bf1f2d40f030300c0c588cce1050e7c</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-02-12 12:38:07</sys_updated_on>
+            <sys_updated_by>russell.shear@arm.com</sys_updated_by>
+            <sys_updated_on>2019-02-12 13:48:01</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -162,14 +148,15 @@
             <sys_class_name>sys_ui_section</sys_class_name>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2017-12-11 12:58:20</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
             <sys_domain>global</sys_domain>
-            <sys_domain_path>/</sys_domain_path>
             <sys_id>9bf1f2d40f030300c0c588cce1050e7c</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>x_17179_inbound_em_email_mapping</sys_name>
             <sys_overrides/>
             <sys_package display_value="Inbound Email Mapping" source="x_17179_inbound_em">ae7f26140f030300c0c588cce1050e13</sys_package>
             <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
             <sys_scope display_value="Inbound Email Mapping">ae7f26140f030300c0c588cce1050e13</sys_scope>
             <sys_update_name>sys_ui_section_9bf1f2d40f030300c0c588cce1050e7c</sys_update_name>
             <sys_updated_by>admin</sys_updated_by>

@@ -3,11 +3,13 @@
         <sys_class_name>sys_security_acl_role</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-12-11 12:49:06</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>44efe6540f030300c0c588cce1050e6f</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>x_17179_inbound_em_email_mapping_configuration.x_17179_inbound_em.email_mapping_configuration_user</sys_name>
         <sys_package display_value="Inbound Email Mapping" source="x_17179_inbound_em">ae7f26140f030300c0c588cce1050e13</sys_package>
         <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Inbound Email Mapping">ae7f26140f030300c0c588cce1050e13</sys_scope>
         <sys_security_acl display_value="x_17179_inbound_em_email_mapping_configuration">0cefe6540f030300c0c588cce1050e6c</sys_security_acl>
         <sys_update_name>sys_security_acl_role_44efe6540f030300c0c588cce1050e6f</sys_update_name>
